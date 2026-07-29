@@ -1,0 +1,43 @@
+{
+    "name": "laravel-config-doctor/laravel-config-doctor",
+    "description": "Audit Laravel configuration and environment usage before it reaches production.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Waqas Yousaf",
+            "homepage": "https://github.com/waqas-yousaf"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "illuminate/console": "^12.0|^13.0",
+        "illuminate/support": "^12.0|^13.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^10.0|^11.0",
+        "phpunit/phpunit": "^11.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "LaravelConfigDoctor\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "LaravelConfigDoctor\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "LaravelConfigDoctor\\ConfigDoctorServiceProvider"
+            ]
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}

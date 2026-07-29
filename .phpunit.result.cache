@@ -1,0 +1,1 @@
+{"version":2,"defects":{"LaravelConfigDoctor\\Tests\\ConfigAuditorTest::test_it_finds_unsafe_environment_usage":7},"times":{"LaravelConfigDoctor\\Tests\\ConfigAuditorTest::test_it_finds_unsafe_environment_usage":0.037,"LaravelConfigDoctor\\Tests\\ConfigAuditorTest::test_it_generates_an_example_file":0.027}}
