@@ -49,10 +49,10 @@ class ConfigAuditor
         // Audit .env.example for committed secrets
         foreach ($exampleEnv as $key => $value) {
             if ($value !== '' && preg_match('/pass|secret|token|key|password|dsn|credential|api|auth|private|signature/i', $key)) {
-                if (!preg_match('/^(?:your[_-].*|placeholder.*|enter[_-].*|xxxx.*|my[_-].*|null|true|false|127\.0\.0\.1|localhost|root|mysql|postgres|sqlite|redis|smtp|mailpit|log|dummy|example|test|changeme|todo)?$/i', $value)) {
+                if (!$this->isSafeExampleValue($value)) {
                     $findings[] = new ConfigFinding('committed-secret', 'error',
-                        "Environment variable {$key} in .env.example contains a secret-looking value: '{$value}'. Make sure it is a placeholder.",
-                        '.env.example', null, ['key' => $key, 'value' => $value]);
+                        "Environment variable {$key} in .env.example contains a secret-looking value. Make sure it is a placeholder.",
+                        '.env.example', null, ['key' => $key, 'value' => '[REDACTED]']);
                 }
             }
         }
@@ -376,6 +376,11 @@ class ConfigAuditor
     private function redact(string $key, mixed $value): mixed
     {
         return preg_match('/pass|secret|token|key|password|dsn|credential/i', $key) ? '[REDACTED]' : $value;
+    }
+
+    private function isSafeExampleValue(string $value): bool
+    {
+        return preg_match('/^(?:your(?:[_-].*)?|placeholder(?:[_-].*)?|enter(?:[_-].*)?|xxxx.*|my[_-](?:placeholder|example|value|secret|token|password)|null|true|false|127\.0\.0\.1|localhost|root|mysql|postgres|sqlite|redis|smtp|mailpit|log|dummy|example|test|changeme|todo)?$/i', trim($value)) === 1;
     }
 
     private function getConfig(string $key, mixed $default = null): mixed

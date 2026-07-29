@@ -5,7 +5,7 @@
 [![Total Downloads](https://img.shields.io/packagist/dt/waqas-yousaf/laravel-config-doctor.svg?style=flat-square)](https://packagist.org/packages/waqas-yousaf/laravel-config-doctor)
 [![Software License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](LICENSE)
 
-Laravel Config Doctor audits your Laravel application's environment variable usage, config safety, and environment integrity before you deploy to production. It supports Laravel 12 and newer on PHP 8.2+.
+Laravel Config Doctor audits your Laravel application's environment variable usage, config safety, and environment integrity before you deploy to production. The current package version is `0.1.0`. It supports Laravel 12 and newer on PHP 8.2+.
 
 ## Why Config Doctor?
 
