@@ -1,8 +1,8 @@
 # Laravel Config Doctor
 
 [![Run Tests](https://github.com/waqas-yousaf/laravel-config-doctor/actions/workflows/run-tests.yml/badge.svg)](https://github.com/waqas-yousaf/laravel-config-doctor/actions/workflows/run-tests.yml)
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/laravel-config-doctor/laravel-config-doctor.svg?style=flat-square)](https://packagist.org/packages/laravel-config-doctor/laravel-config-doctor)
-[![Total Downloads](https://img.shields.io/packagist/dt/laravel-config-doctor/laravel-config-doctor.svg?style=flat-square)](https://packagist.org/packages/laravel-config-doctor/laravel-config-doctor)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/waqas-yousaf/laravel-config-doctor.svg?style=flat-square)](https://packagist.org/packages/waqas-yousaf/laravel-config-doctor)
+[![Total Downloads](https://img.shields.io/packagist/dt/waqas-yousaf/laravel-config-doctor.svg?style=flat-square)](https://packagist.org/packages/waqas-yousaf/laravel-config-doctor)
 [![Software License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](LICENSE)
 
 Laravel Config Doctor audits your Laravel application's environment variable usage, config safety, and environment integrity before you deploy to production. It supports Laravel 12 and newer on PHP 8.2+.
@@ -27,7 +27,7 @@ Config Doctor scans your codebase to catch these and other configuration anti-pa
 Install the package via Composer:
 
 ```bash
-composer require laravel-config-doctor/laravel-config-doctor --dev
+composer require waqas-yousaf/laravel-config-doctor --dev
 ```
 
 The service provider is automatically registered.

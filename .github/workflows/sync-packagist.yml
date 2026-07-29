@@ -1,0 +1,20 @@
+name: Sync Packagist
+
+on:
+  push:
+    branches:
+      - main
+      - master
+    tags:
+      - '*'
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Packagist Sync
+        run: |
+          curl -X POST \
+            -H "Content-Type: application/json" \
+            -d '{"repository": {"url": "https://github.com/waqas-yousaf/laravel-config-doctor"}}' \
+            "https://packagist.org/api/update-package?username=${{ secrets.PACKAGIST_USERNAME }}&apiToken=${{ secrets.PACKAGIST_API_TOKEN }}"

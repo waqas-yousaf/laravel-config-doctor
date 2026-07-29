@@ -1,5 +1,5 @@
 {
-    "name": "laravel-config-doctor/laravel-config-doctor",
+    "name": "waqas-yousaf/laravel-config-doctor",
     "description": "Audit Laravel configuration and environment usage before it reaches production.",
     "type": "library",
     "license": "MIT",
